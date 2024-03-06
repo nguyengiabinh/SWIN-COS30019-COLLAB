@@ -61,7 +61,7 @@ def main():
         with open('output.txt', 'w') as file:
             # Write the output directly to the file
             file.write(f"{path}")
-        
+            
         movements = interpret_movements(path)
         print("Path Interpretation:")
         for i, movement in enumerate(movements, start=1):
