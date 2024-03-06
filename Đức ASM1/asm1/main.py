@@ -4,6 +4,8 @@ from bfs_search import asm1_bfs
 from dfs_search import asm1_dfs  
 from greedy_best_first_search import asm1_gdf_search
 
+# hello
+
 def main(file_path):
     grid_map, start_position, goal_positions, obstacles = create_grid_map(file_path)
     draw_map(grid_map, start_position, goal_positions, obstacles)
