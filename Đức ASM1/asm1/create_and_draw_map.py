@@ -66,6 +66,10 @@ def draw_map(grid, start, goals, obstacles, paths=None, visited=None):
     if visited:
         for col, row in visited:
             plt.plot(col + 0.5, total_rows - 1 - row + 0.5, 'blue', marker='o', markersize=10)
+    
+    if paths:
+        for col,row in paths:
+            plt.plot(col + 0.5, total_rows - 1 - row + 0.5, 'yellow', marker='o', markersize=10)
             
     plt.grid(True, which='both', linestyle='--', linewidth=0.5)
     plt.xticks(range(len(grid[0])))
