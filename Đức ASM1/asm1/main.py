@@ -25,12 +25,8 @@ def main():
         else:
             print("Invalid search algorithm. Please enter a valid search algorithm.")
 
-# hello
-
-def main(file_path):
     grid_map, start_position, goal_positions, obstacles = create_grid_map(file_path)
     draw_map(grid_map, start_position, goal_positions, obstacles)
-
 
 
     if search_algorithm == 'a_star':
