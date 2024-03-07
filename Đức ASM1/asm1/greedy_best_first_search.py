@@ -1,7 +1,8 @@
 import heapq
 import math
+import heapq
 
-def asm1_gdf_search(grid, start, goal):  
+def asm1_gdf_search(grid, start, goals):  
     rows, columns = len(grid), len(grid[0])
     visited_nodes = set()
     priority_queue = []
@@ -9,18 +10,15 @@ def asm1_gdf_search(grid, start, goal):
 
     heapq.heappush(priority_queue, (0, start))
 
-    def heuristic(position):
-        return abs(position[0] - goal[0]) + abs(position[1] - goal[1])
+    def heuristic_cost_estimate(current, goal):
+        return abs(goal[0] - current[0]) + abs(goal[1] - current[1])
 
-    def sort_key(neighbor):
-        x, y = neighbor
-        heuristic_value = heuristic(neighbor)
-        return (heuristic_value, x, y) 
+    initial_goal = min(goals, key=lambda goal: heuristic_cost_estimate(start, goal))
 
     while priority_queue:
         current_cost, current_position = heapq.heappop(priority_queue)
 
-        if current_position == goal:
+        if current_position == initial_goal:
             path = reconstruct_path(current_position, came_from)
             return path, visited_nodes
 
@@ -28,7 +26,7 @@ def asm1_gdf_search(grid, start, goal):
             visited_nodes.add(current_position)
 
             neighbors = get_neighbors(current_position, grid, rows, columns)
-            neighbors.sort(key=sort_key)
+            neighbors.sort(key=lambda neighbor: heuristic_cost_estimate(neighbor, initial_goal))
 
             for neighbor_position in neighbors:
                 if neighbor_position not in visited_nodes:

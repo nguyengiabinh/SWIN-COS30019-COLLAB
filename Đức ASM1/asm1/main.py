@@ -3,8 +3,8 @@ from astar_search import asm1_a_star_search
 from bfs_search import asm1_bfs
 from dfs_search import asm1_dfs  
 from greedy_best_first_search import asm1_gdf_search
-from ucs_search import ucs 
-from best_first_search import best_first_search  
+from uniform_cost_search import ucs_search
+from best_first_search import best_first_search
 import os
 
 def main():
@@ -36,17 +36,17 @@ def main():
     if search_algorithm == 'astar':
         path, visited = asm1_a_star_search(grid_map, start_position, goal_positions)
     elif search_algorithm == 'bfs':
-        path, visited = asm1_bfs(grid_map, start_position, goal_positions[0])
+        path, visited = asm1_bfs(grid_map, start_position, goal_positions)
     elif search_algorithm == 'dfs':
-        path, visited = asm1_dfs(grid_map, start_position, goal_positions[0]) 
+        path, visited = asm1_dfs(grid_map, start_position, goal_positions) 
     elif search_algorithm == 'gbfs':
-        path, visited = asm1_gdf_search(grid_map, start_position, goal_positions[0])
+        path, visited = asm1_gdf_search(grid_map, start_position, goal_positions)
     elif search_algorithm == 'ucs':
-        path, visited = ucs(grid_map, start_position, goal_positions)  # Execute the UCS algorithm
+        path, visited = ucs_search(grid_map, start_position, goal_positions)  
     elif search_algorithm == 'bestfs':
-        path, visited = best_first_search(grid_map, start_position, goal_positions)  # Execute the Best First Search algorithm
+        path, visited = best_first_search(grid_map, start_position, goal_positions)  
     else:
-        raise ValueError("Invalid search algorithm. Use 'a_star', 'bfs', 'dfs', or 'greedy_best_first'.")
+        raise ValueError("Invalid search algorithm. Use 'a_star', 'bfs', 'dfs', 'bestfs', or 'greedy_best_first'.")
 
     if path:
         print(f"Path found using {search_algorithm}:", path)

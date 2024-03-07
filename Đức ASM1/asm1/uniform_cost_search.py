@@ -1,4 +1,5 @@
-import queue
+import math
+from search_algorithm import Search
 
 class Node:
     def __init__(self, position, cost, heuristic):
@@ -7,22 +8,23 @@ class Node:
         self.heuristic = heuristic
 
     def __lt__(self, other):
-        return self.heuristic < other.heuristic  # So sánh theo giá trị heuristic
+        return self.cost < other.cost
 
-def best_first_search(grid, start, goals):  
+def ucs_search(grid, start, goals):  
     rows, columns = len(grid), len(grid[0])
-    open_set = queue.PriorityQueue()
+    open_set = []
     
     initial_goal = min(goals, key=lambda goal: heuristic_cost_estimate(start, goal))
 
     start_node = Node(start, 0, heuristic_cost_estimate(start, initial_goal))
-    open_set.put(start_node)
+    open_set.append(start_node)
     came_from = {}
     g_score = {start: 0}
     visited_nodes = set()
 
-    while not open_set.empty():
-        current_node = open_set.get()
+    while open_set:
+        open_set.sort(key=lambda x: x.cost)
+        current_node = open_set.pop(0)
         visited_nodes.add(current_node.position)
 
         if current_node.position == initial_goal:
@@ -36,7 +38,8 @@ def best_first_search(grid, start, goals):
 
                 if neighbor_position not in g_score or tentative_g_score < g_score[neighbor_position]:
                     g_score[neighbor_position] = tentative_g_score
-                    open_set.put(Node(neighbor_position, tentative_g_score, heuristic_cost_estimate(neighbor_position, initial_goal)))
+                    neighbor_node = Node(neighbor_position, tentative_g_score, heuristic_cost_estimate(neighbor_position,initial_goal))
+                    open_set.append(neighbor_node)
                     came_from[neighbor_position] = current_node.position
 
     return None, visited_nodes

@@ -1,6 +1,4 @@
-# dfs_search.py
-
-def asm1_dfs(grid, start, goal):  # Đổi tên hàm thành custom_dfs
+def asm1_dfs(grid, start, goal):  
     rows, columns = len(grid), len(grid[0])
     visited_nodes = set()
     
@@ -12,8 +10,10 @@ def asm1_dfs(grid, start, goal):  # Đổi tên hàm thành custom_dfs
                 prioritized_moves.append(next_position)
         return prioritized_moves
 
+    def dfs(current_position, path, stack=None):
+        if stack is None:
+            stack = []
 
-    def dfs(current_position, path):
         visited_nodes.add(current_position)
 
         if current_position == goal:
@@ -21,10 +21,12 @@ def asm1_dfs(grid, start, goal):  # Đổi tên hàm thành custom_dfs
 
         for neighbor_position in prioritize(current_position):
             if neighbor_position not in visited_nodes:
-                result, visited_set = dfs(neighbor_position, path + [current_position])
+                stack.append(neighbor_position)
+                result, visited_set = dfs(neighbor_position, path + [current_position], stack)
                 if result:
                     return result, visited_set
+                stack.pop()
 
         return None, visited_nodes
 
-    return dfs(start, [])
+    return dfs(start, [], [])

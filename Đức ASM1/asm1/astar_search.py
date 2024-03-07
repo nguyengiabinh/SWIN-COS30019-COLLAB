@@ -15,7 +15,6 @@ def asm1_a_star_search(grid, start, goals):
     
     initial_goal = min(goals, key = lambda goal: heuristic_cost_estimate(start, goal))
 
-    
     start_nodes = Node(start, 0, heuristic_cost_estimate(start, initial_goal))
     print(f'{start_nodes}')
     
