@@ -1,19 +1,28 @@
 import heapq
 import math
-import heapq
+
+def heuristic_cost_estimate(current, goal):
+    return abs(goal[0] - current[0]) + abs(goal[1] - current[1])
 
 def asm1_gdf_search(grid, start, goals):  
+    
     rows, columns = len(grid), len(grid[0])
     visited_nodes = set()
     priority_queue = []
     came_from = {}
+    
+    # Tìm mục tiêu gần nhất
+    initial_goal = min(goals, key=lambda goal: heuristic_cost_estimate(start, goal))
 
     heapq.heappush(priority_queue, (0, start))
+    
+    def heuristic(position):
+        return abs(position[0] - initial_goal[0]) + abs(position[1] - initial_goal[1])
 
-    def heuristic_cost_estimate(current, goal):
-        return abs(goal[0] - current[0]) + abs(goal[1] - current[1])
-
-    initial_goal = min(goals, key=lambda goal: heuristic_cost_estimate(start, goal))
+    def sort_key(neighbor):
+        x, y = neighbor
+        heuristic_value = heuristic(neighbor)
+        return (heuristic_value, x, y) 
 
     while priority_queue:
         current_cost, current_position = heapq.heappop(priority_queue)
@@ -26,7 +35,7 @@ def asm1_gdf_search(grid, start, goals):
             visited_nodes.add(current_position)
 
             neighbors = get_neighbors(current_position, grid, rows, columns)
-            neighbors.sort(key=lambda neighbor: heuristic_cost_estimate(neighbor, initial_goal))
+            neighbors.sort(key=sort_key)
 
             for neighbor_position in neighbors:
                 if neighbor_position not in visited_nodes:

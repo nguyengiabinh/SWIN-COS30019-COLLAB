@@ -10,14 +10,24 @@ class Node:
         return (self.cost + self.heuristic) < (other.cost + other.heuristic)
 
 def asm1_a_star_search(grid, start, goals):  
+    """
+    A* search algorithm implementation.
+    
+    Parameters:
+    - grid (list): The grid representing the map.
+    - start (tuple): The starting position.
+    - goals (list): List of goal positions.
+    
+    Returns:
+    - path (list): The path from start to goal.
+    - visited_nodes (set): Set of visited nodes during the search.
+    """
     rows, columns = len(grid), len(grid[0])
     open_set = queue.PriorityQueue()
     
-    initial_goal = min(goals, key = lambda goal: heuristic_cost_estimate(start, goal))
+    initial_goal = min(goals, key=lambda goal: heuristic_cost_estimate(start, goal))
 
     start_nodes = Node(start, 0, heuristic_cost_estimate(start, initial_goal))
-    print(f'{start_nodes}')
-    
     open_set.put(start_nodes)
     came_from = {}
     g_score = {start: 0}
@@ -38,7 +48,7 @@ def asm1_a_star_search(grid, start, goals):
 
                 if neighbor_position not in g_score or tentative_g_score < g_score[neighbor_position]:
                     g_score[neighbor_position] = tentative_g_score
-                    open_set.put(Node(neighbor_position, tentative_g_score, heuristic_cost_estimate(neighbor_position,initial_goal)))
+                    open_set.put(Node(neighbor_position, tentative_g_score, heuristic_cost_estimate(neighbor_position, initial_goal)))
                     came_from[neighbor_position] = current_node.position
 
     return None, visited_nodes

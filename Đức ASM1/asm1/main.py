@@ -8,7 +8,9 @@ from best_first_search import best_first_search
 import os
 
 def main():
-
+    """
+    Main function to execute the search algorithm based on user input.
+    """
     while True:
         file_path = input("Enter the file path: ")
 
@@ -16,7 +18,6 @@ def main():
             break
         else:
             print(f"The file '{file_path}' does not exist. Please enter a valid file path.")
-
 
     while True:
         search_algorithm = input("Enter the search algorithm ('astar', 'bfs', 'dfs', 'gbfs', 'ucs', 'bestfs'): ")
@@ -28,10 +29,8 @@ def main():
         else:
             print("Invalid search algorithm. Please enter a valid search algorithm.")
 
-
     grid_map, start_position, goal_positions, obstacles = create_grid_map(file_path)
     draw_map(grid_map, start_position, goal_positions, obstacles)
-
 
     if search_algorithm == 'astar':
         path, visited = asm1_a_star_search(grid_map, start_position, goal_positions)
@@ -56,7 +55,7 @@ def main():
             grid_map[position[1]][position[0]] = 'P'
         draw_map(grid_map, start_position, goal_positions, obstacles, path, visited)
     else:
-            print(f"No path found using {search_algorithm}.")
+        print(f"No path found using {search_algorithm}.")
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,16 @@
 def asm1_dfs(grid, start, goal):  
+    """
+    Depth-First Search algorithm implementation.
+    
+    Parameters:
+    - grid (list): The grid representing the map.
+    - start (tuple): The starting position.
+    - goal (tuple): The goal position.
+    
+    Returns:
+    - path (list): The path from start to goal.
+    - visited_nodes (set): Set of visited nodes during the search.
+    """
     rows, columns = len(grid), len(grid[0])
     visited_nodes = set()
     
@@ -16,7 +28,7 @@ def asm1_dfs(grid, start, goal):
 
         visited_nodes.add(current_position)
 
-        if current_position == goal:
+        if current_position in goal:
             return path + [current_position], visited_nodes
 
         for neighbor_position in prioritize(current_position):
@@ -30,3 +42,4 @@ def asm1_dfs(grid, start, goal):
         return None, visited_nodes
 
     return dfs(start, [], [])
+

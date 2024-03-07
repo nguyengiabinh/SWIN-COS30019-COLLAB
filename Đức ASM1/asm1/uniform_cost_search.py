@@ -1,5 +1,4 @@
 import math
-from search_algorithm import Search
 
 class Node:
     def __init__(self, position, cost, heuristic):
@@ -9,6 +8,19 @@ class Node:
 
     def __lt__(self, other):
         return self.cost < other.cost
+    
+    """
+    Uniform Cost Search algorithm implementation.
+    
+    Parameters:
+    - grid (list): The grid representing the map.
+    - start (tuple): The starting position.
+    - goal (tuple): The goal position.
+    
+    Returns:
+    - path (list): The path from start to goal.
+    - visited_nodes (set): Set of visited nodes during the search.
+    """
 
 def ucs_search(grid, start, goals):  
     rows, columns = len(grid), len(grid[0])

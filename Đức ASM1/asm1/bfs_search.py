@@ -1,6 +1,6 @@
 from collections import deque
 
-def asm1_bfs(grid, start, goal):  
+def asm1_bfs(grid, start, goals):  
     rows, columns = len(grid), len(grid[0])
     visited_nodes = set()  
     queue = deque([(start, [])])
@@ -10,7 +10,7 @@ def asm1_bfs(grid, start, goal):
         current_pos, path = queue.popleft()
         visited_set.add(current_pos)
 
-        if current_pos == goal:
+        if current_pos in goals:
             return path + [current_pos], visited_set
 
         if current_pos not in visited_nodes:  

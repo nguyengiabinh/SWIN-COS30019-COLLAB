@@ -3,6 +3,18 @@ import matplotlib.patches as patches
 
 
 def create_grid_map(file_path):
+    """
+    Creates a grid map from a file.
+    
+    Parameters:
+    - file_path (str): Path to the file.
+    
+    Returns:
+    - grid_map (list): The grid representing the map.
+    - start_position (tuple): The starting position.
+    - goal_positions (list): List of goal positions.
+    - obstacles (list): List of obstacle positions.
+    """
     rows, columns = 0, 0
     start_position = ()
     goal_positions = []
