@@ -17,15 +17,17 @@ def main():
         else:
             print(f"The file '{file_path}' does not exist. Please enter a valid file path.")
 
-        algorithms = ['astar', 'bfs', 'dfs', 'gbfs', 'ucs', 'bestfs']
+
     while True:
         search_algorithm = input("Enter the search algorithm ('astar', 'bfs', 'dfs', 'gbfs', 'ucs', 'bestfs'): ")
+        algorithms = ['astar', 'bfs', 'dfs', 'gbfs', 'ucs', 'bestfs']
 
         if search_algorithm in algorithms:
             print(f"Chosen search algorithm: {search_algorithm}")
             break
         else:
             print("Invalid search algorithm. Please enter a valid search algorithm.")
+
 
     grid_map, start_position, goal_positions, obstacles = create_grid_map(file_path)
     draw_map(grid_map, start_position, goal_positions, obstacles)
