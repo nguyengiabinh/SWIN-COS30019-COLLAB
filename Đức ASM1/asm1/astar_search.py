@@ -10,12 +10,11 @@ class Node:
         return (self.cost + self.heuristic) < (other.cost + other.heuristic)
 
 def asm1_a_star_search(grid, start, goals):  
-    print(f'{goals}')
     rows, columns = len(grid), len(grid[0])
     open_set = queue.PriorityQueue()
     
     initial_goal = min(goals, key = lambda goal: heuristic_cost_estimate(start, goal))
-    print(f'Initial Goal is {initial_goal}')
+
     
     start_nodes = Node(start, 0, heuristic_cost_estimate(start, initial_goal))
     print(f'{start_nodes}')

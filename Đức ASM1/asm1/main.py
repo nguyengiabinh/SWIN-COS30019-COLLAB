@@ -3,6 +3,8 @@ from astar_search import asm1_a_star_search
 from bfs_search import asm1_bfs
 from dfs_search import asm1_dfs  
 from greedy_best_first_search import asm1_gdf_search
+from ucs_search import ucs 
+from best_first_search import best_first_search  
 import os
 
 def main():
@@ -15,9 +17,9 @@ def main():
         else:
             print(f"The file '{file_path}' does not exist. Please enter a valid file path.")
 
-    algorithms = ['a_star', 'bfs', 'dfs', 'gbfs']
+        algorithms = ['astar', 'bfs', 'dfs', 'gbfs', 'ucs', 'bestfs']
     while True:
-        search_algorithm = input("Enter the search algorithm ('astar', 'bfs', 'dfs', 'gbfs'): ")
+        search_algorithm = input("Enter the search algorithm ('astar', 'bfs', 'dfs', 'gbfs', 'ucs', 'bestfs'): ")
 
         if search_algorithm in algorithms:
             print(f"Chosen search algorithm: {search_algorithm}")
@@ -29,7 +31,7 @@ def main():
     draw_map(grid_map, start_position, goal_positions, obstacles)
 
 
-    if search_algorithm == 'a_star':
+    if search_algorithm == 'astar':
         path, visited = asm1_a_star_search(grid_map, start_position, goal_positions)
     elif search_algorithm == 'bfs':
         path, visited = asm1_bfs(grid_map, start_position, goal_positions[0])
@@ -37,6 +39,10 @@ def main():
         path, visited = asm1_dfs(grid_map, start_position, goal_positions[0]) 
     elif search_algorithm == 'gbfs':
         path, visited = asm1_gdf_search(grid_map, start_position, goal_positions[0])
+    elif search_algorithm == 'ucs':
+        path, visited = ucs(grid_map, start_position, goal_positions)  # Execute the UCS algorithm
+    elif search_algorithm == 'bestfs':
+        path, visited = best_first_search(grid_map, start_position, goal_positions)  # Execute the Best First Search algorithm
     else:
         raise ValueError("Invalid search algorithm. Use 'a_star', 'bfs', 'dfs', or 'greedy_best_first'.")
 
