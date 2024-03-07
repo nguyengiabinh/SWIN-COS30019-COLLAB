@@ -5,6 +5,7 @@ from dfs_search import asm1_dfs
 from greedy_best_first_search import asm1_gdf_search
 from uniform_cost_search import ucs_search
 from best_first_search import best_first_search
+from move_actions import get_movement_directions, get_visited_node_count
 import os
 
 def main():
@@ -51,6 +52,11 @@ def main():
         print(f"Path found using {search_algorithm}:", path)
         print(f"Visited set using {search_algorithm}:", visited)
         print("Total node visited: ", len(visited))
+        
+        movements = get_movement_directions(path)
+        print("Path Interpretation:")
+        for i, movement in enumerate(movements, start=1):
+            print(f"{movement}")
         for position in path:
             grid_map[position[1]][position[0]] = 'P'
         draw_map(grid_map, start_position, goal_positions, obstacles, path, visited)
