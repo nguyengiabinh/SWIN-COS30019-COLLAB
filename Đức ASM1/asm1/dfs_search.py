@@ -27,6 +27,7 @@ def asm1_dfs(grid, start, goal):
             stack = []
 
         visited_nodes.add(current_position)
+        # print(f"Visited node: {visited_nodes}")
 
         if current_position in goal:
             return path + [current_position], visited_nodes
