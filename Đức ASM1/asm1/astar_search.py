@@ -37,7 +37,7 @@ def asm1_a_star_search(grid, start, goals):
         current_node = open_set.get()
         visited_nodes.add(current_node.position)
 
-        if current_node.position == initial_goal:
+        if current_node.position in goals: #== initial_goal:
             return reconstruct_path(came_from, current_node.position), visited_nodes
 
         for neighbor in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
