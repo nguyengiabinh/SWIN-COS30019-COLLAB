@@ -20,7 +20,7 @@ def explore_neighbors(grid, current_node, visited_set, came_from, initial_goal):
     neighbors = []
 
     # Prioritize neighbors in the order: up, left, down, right
-    movements = [(-1, 0), (0, -1), (1, 0), (0, 1)]
+    movements = [(0, -1), (-1, 0), (0, 1), (1, 0)]
 
     for movement in movements:
         neighbor_position = (

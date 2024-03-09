@@ -27,7 +27,7 @@ def asm1_gdf_search(grid, start, goals):
     while priority_queue:
         current_cost, current_position = heapq.heappop(priority_queue)
 
-        if current_position == initial_goal:
+        if current_position in goals:
             path = reconstruct_path(current_position, came_from)
             return path, visited_nodes
 
