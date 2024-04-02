@@ -7,7 +7,7 @@ class Node:
         self.heuristic = heuristic
 
     def __lt__(self, other):
-        return self.heuristic < other.heuristic  # So sánh theo giá trị heuristic
+        return self.heuristic < other.heuristic 
 
 def best_first_search(grid, start, goals):  
     rows, columns = len(grid), len(grid[0])
@@ -25,7 +25,7 @@ def best_first_search(grid, start, goals):
         current_node = open_set.get()
         visited_nodes.add(current_node.position)
 
-        if current_node.position == initial_goal:
+        if current_node.position in goals:
             return reconstruct_path(came_from, current_node.position), visited_nodes
 
         for neighbor in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
