@@ -1,7 +1,7 @@
-from Reader import *
+from File_Reader import *
 
 # Read File
-filename = 'test.txt' 
+filename = 'test2.txt' 
 
 print(f'Debug filename: {filename}\n')
 
