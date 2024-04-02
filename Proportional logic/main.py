@@ -2,7 +2,7 @@ from File_Reader import *
 from knowledge_base import build_knowledge_base, print_knowledge_base
 
 # Read File
-filename = 'test.txt' 
+filename = 'test2.txt' 
 
 print(f'Debug filename: {filename}\n')
 
