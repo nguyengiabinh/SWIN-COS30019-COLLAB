@@ -20,7 +20,11 @@ expr = infixNotation(var, [
 def parse_logical_expression(sentence):
     try:
         parsed = expr.parseString(sentence, parseAll=True)
-        return parsed[0]  # Return the first (and only) element of the parsed result
+        # Check if the parsed result is not just a string (single literal)
+        if hasattr(parsed[0], 'asList'):
+            return parsed[0].asList()
+        else:
+            return [parsed[0]]  # Return a list with the single literal
     except Exception as e:
         print(f"Error parsing sentence '{sentence}': {e}")
         return []
@@ -71,8 +75,6 @@ def add_horn_clause(knowledge_base, clause):
             premises = flattened_premises
 
         knowledge_base["implications"].setdefault(conclusion, []).append(premises)
-
-
 def build_knowledge_base(filename):
     tell, ask = read(filename)
     symbols, sentences = extract_text(tell)
@@ -92,5 +94,13 @@ def print_knowledge_base(knowledge_base):
     print("Facts:", ", ".join(knowledge_base["facts"]))
     for conclusion, premises_list in knowledge_base["implications"].items():
         for premises in premises_list:
-            print(f"{' & '.join(premises)} => {conclusion}")
+            # Ensure premises are correctly formatted as strings
+            if isinstance(premises, list):
+                premises_str = ' '.join(premises)
+            else:
+                premises_str = premises
+            print(f"{premises_str} => {conclusion}")
+
+
+###################################################################################################################
 
