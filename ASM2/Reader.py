@@ -1,5 +1,6 @@
 import re
 
+'''Read from file'''
 def read(filename):
     with open(filename) as f:
         lines = [line.strip().lower().split(";") for line in f]
@@ -11,11 +12,12 @@ def read(filename):
         query_index = len(flattened_lines)
 
     tell = [x.replace(" ", "") for x in flattened_lines[:query_index] if x not in ["", "tell", "ask"]]
-    ask = flattened_lines[query_index + 1].replace(" ", "") if query_index + 1 < len(flattened_lines) else ''
+    query = flattened_lines[query_index + 1].replace(" ", "") if query_index + 1 < len(flattened_lines) else ''
 
-    return tell, ask
+    return tell, query  
     
-def extract_text(tell):
+'''Extract Symbol'''
+def extract_symbols_and_sentences(tell):
     symbols = set()
     sentences = []
     for sentence in tell:

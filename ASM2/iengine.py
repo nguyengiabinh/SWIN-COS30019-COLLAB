@@ -8,7 +8,7 @@ from forward_chaining import *
 
 def main(method, filename):
     # Read File
-    tell, query = read(filename)
+    tell, ask = read(filename)
 
     # Extract symbol
     symbols, sentences = extract_symbols_and_sentences(tell)
@@ -21,7 +21,7 @@ def main(method, filename):
         symbol_objects[symbol] = Symbol(symbol)
 
     knowledge_base = create_knowledge_base(sentences) # Transform sentence into logical sentence
-    query_sentence = parse(query)
+    query_sentence = parse(ask)
 
     # Model Check
     is_Valid = model_check(knowledge_base, query_sentence)
@@ -31,21 +31,21 @@ def main(method, filename):
         # Create a TruthTable instance
         truth_table = TruthTable(symbols, knowledge_base, query_sentence)
         entailed_symbols = truth_table.get_entailed_symbols()
-        print(entailed_symbols)
         print(truth_table)
+        print(entailed_symbols)
     elif method == "FC":
         # Forward Chaining
-        fc = ForwardChaining(knowledge_base, query)
+        fc = ForwardChaining(knowledge_base, ask)
         fc_result = fc.solve()
         print(fc_result)
     elif method == "BC":
         # Backward Chaining
-        bc = BackwardChaining(knowledge_base, query)
+        bc = BackwardChaining(knowledge_base, ask)
         bc_result = bc.solve()
         print(bc_result)
 
 if __name__ == "__main__":
     method = input("input method (TT/FC/BC): ")
-    filename = 'test8.txt'
+    filename = 'test2.txt'
     main(method, filename)
 
