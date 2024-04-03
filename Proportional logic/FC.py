@@ -1,3 +1,5 @@
+
+# Forward Chaining logic for the expert system
 def forward_chaining(knowledge_base, query):
     # Initialize known facts and inference counts
     known_facts = set()
