@@ -1,10 +1,10 @@
-import sys
+import os
 from Reader import *
-from sentence_transformers import *
+from Parser import *
 from logic import *
 from truthtable import *
-from backward_chaining import *
-from forward_chaining import *
+from BC import *
+from FC import *
 
 def main(method, filename):
     # Read File
@@ -20,7 +20,7 @@ def main(method, filename):
     for symbol in symbols:
         symbol_objects[symbol] = Symbol(symbol)
 
-    knowledge_base = create_knowledge_base(sentences) # Transform sentence into logical sentence
+    knowledge_base = construct_knowledge_base(sentences) # Transform sentence into logical sentence
     query_sentence = parse(ask)
 
     # Model Check
@@ -45,7 +45,26 @@ def main(method, filename):
         print(bc_result)
 
 if __name__ == "__main__":
-    method = input("input method (TT/FC/BC): ")
-    filename = 'test2.txt'
+# Get the file path from the user
+    while True:
+        filename = input("Enter the file path: ")
+
+        if os.path.exists(filename):
+            break
+        else:
+            print(f"The file '{filename}' does not exist. Please enter a valid file path.")
+
+# Define available search algorithms
+    method_choice = ['TT', 'FC', 'BC']
+
+# Get the desired search algorithm from the user
+    while True:
+        method = input("input method (TT/FC/BC): ")
+
+        if method in method_choice:
+            print(f"Chosen method: {method_choice}")
+            break
+        else:
+            print("Invalid method. Please enter a valid method.")
     main(method, filename)
 

@@ -1,7 +1,7 @@
 from itertools import product
 from tabulate import tabulate
 from typing import List, Union
-from sentence_transformers import *
+from Parser import *
 from logic import *
 
 class TruthTable:
@@ -42,7 +42,7 @@ class TruthTable:
         if self.count > 0 and valid:
             return f'YES: {self.count}'
         else:
-            return f'NO {self.query} cannot be proven'
+            return f'NO {self.query}'
         
         
         
