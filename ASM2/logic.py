@@ -150,6 +150,8 @@
 #     # Check that knowledge entails query
 #     return check_all(knowledge, query, symbols, dict())
 
+#########################################################################################
+
 
 
 class Sentence:   
