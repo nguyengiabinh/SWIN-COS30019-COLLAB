@@ -102,12 +102,3 @@ class TruthTable:
         headers = self.symbols + ["Tell Eval", "Ask Eval"]
         rows = [(list(model.values()) + [kb_eval, query_eval]) for model, kb_eval, query_eval in self.table]
         return tabulate(rows, headers=headers, tablefmt='fancy_grid')
-
-
-
-
-
-
-
-
-
