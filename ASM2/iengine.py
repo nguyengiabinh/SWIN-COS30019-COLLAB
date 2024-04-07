@@ -72,7 +72,7 @@ while True:
 
     # Check if the method is valid
     if method not in method_choice:
-        print("Invalid method. Please enter a valid method (TT, FC, BC).")
+        print("Invalid method. Please enter a valid method (BC, FC, TT).")
         continue  # This skips the rest of the loop and asks for input again
 
     # If both the file exists and the method is valid, print confirmation and break out of the loop
