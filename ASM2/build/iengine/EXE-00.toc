@@ -1,0 +1,114 @@
+('D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\dist\\iengine.exe',
+ True,
+ False,
+ False,
+ 'D:\\Python source '
+ 'file\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-console.ico',
+ None,
+ False,
+ False,
+ b'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<assembly xmlns='
+ b'"urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">\n  <trustInfo x'
+ b'mlns="urn:schemas-microsoft-com:asm.v3">\n    <security>\n      <requested'
+ b'Privileges>\n        <requestedExecutionLevel level="asInvoker" uiAccess='
+ b'"false"/>\n      </requestedPrivileges>\n    </security>\n  </trustInfo>\n  '
+ b'<compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">\n    <'
+ b'application>\n      <supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f'
+ b'0}"/>\n      <supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>\n '
+ b'     <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/>\n      <s'
+ b'upportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>\n      <supporte'
+ b'dOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}"/>\n    </application>\n  <'
+ b'/compatibility>\n  <application xmlns="urn:schemas-microsoft-com:asm.v3">'
+ b'\n    <windowsSettings>\n      <longPathAware xmlns="http://schemas.micros'
+ b'oft.com/SMI/2016/WindowsSettings">true</longPathAware>\n    </windowsSett'
+ b'ings>\n  </application>\n  <dependency>\n    <dependentAssembly>\n      <ass'
+ b'emblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version='
+ b'"6.0.0.0" processorArchitecture="*" publicKeyToken="6595b64144ccf1df" langua'
+ b'ge="*"/>\n    </dependentAssembly>\n  </dependency>\n</assembly>',
+ True,
+ False,
+ None,
+ None,
+ None,
+ 'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\iengine.pkg',
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'D:\\Python source '
+   'file\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'D:\\Python source '
+   'file\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   'D:\\Python source '
+   'file\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('iengine',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\iengine.py',
+   'PYSOURCE'),
+  ('python312.dll', 'D:\\Python source file\\python312.dll', 'BINARY'),
+  ('_decimal.pyd', 'D:\\Python source file\\DLLs\\_decimal.pyd', 'EXTENSION'),
+  ('_hashlib.pyd', 'D:\\Python source file\\DLLs\\_hashlib.pyd', 'EXTENSION'),
+  ('_lzma.pyd', 'D:\\Python source file\\DLLs\\_lzma.pyd', 'EXTENSION'),
+  ('_bz2.pyd', 'D:\\Python source file\\DLLs\\_bz2.pyd', 'EXTENSION'),
+  ('unicodedata.pyd',
+   'D:\\Python source file\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('select.pyd', 'D:\\Python source file\\DLLs\\select.pyd', 'EXTENSION'),
+  ('_socket.pyd', 'D:\\Python source file\\DLLs\\_socket.pyd', 'EXTENSION'),
+  ('VCRUNTIME140.dll', 'D:\\Python source file\\VCRUNTIME140.dll', 'BINARY'),
+  ('libcrypto-3.dll',
+   'D:\\Python source file\\DLLs\\libcrypto-3.dll',
+   'BINARY'),
+  ('test.txt', 'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\test.txt', 'DATA'),
+  ('test2.txt', 'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\test2.txt', 'DATA'),
+  ('test3.txt', 'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\test3.txt', 'DATA'),
+  ('test4.txt', 'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\test4.txt', 'DATA'),
+  ('test5.txt', 'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\test5.txt', 'DATA'),
+  ('test6.txt', 'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\test6.txt', 'DATA'),
+  ('base_library.zip',
+   'D:\\SWINBURNE\\SWIN-COS30019-COLLAB\\ASM2\\build\\iengine\\base_library.zip',
+   'DATA'),
+  ('lark\\grammars\\lark.lark',
+   'D:\\Python source file\\Lib\\site-packages\\lark\\grammars\\lark.lark',
+   'DATA'),
+  ('lark\\py.typed',
+   'D:\\Python source file\\Lib\\site-packages\\lark\\py.typed',
+   'DATA'),
+  ('lark\\grammars\\python.lark',
+   'D:\\Python source file\\Lib\\site-packages\\lark\\grammars\\python.lark',
+   'DATA'),
+  ('lark\\grammars\\common.lark',
+   'D:\\Python source file\\Lib\\site-packages\\lark\\grammars\\common.lark',
+   'DATA'),
+  ('lark\\grammars\\unicode.lark',
+   'D:\\Python source file\\Lib\\site-packages\\lark\\grammars\\unicode.lark',
+   'DATA')],
+ [],
+ False,
+ False,
+ 1712567761,
+ [('run.exe',
+   'D:\\Python source '
+   'file\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
+   'EXECUTABLE')],
+ 'D:\\Python source file\\python312.dll')

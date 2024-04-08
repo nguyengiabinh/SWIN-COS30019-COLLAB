@@ -1,0 +1,4 @@
+TELL
+(m <=> n) & (~o => p) & (q || ~r) & s & t; ~u; v => w;
+ASK
+~n & p & (s || t)

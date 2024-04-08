@@ -79,4 +79,4 @@ while True:
     print(f"File: {filename}, Chosen method: {method}")
     break  # Exit the loop since both conditions are met
 main(method, filename)
-
+input("Press Enter to exit...")
